@@ -1,0 +1,3 @@
+[submodule "libanvil"]
+	path = libanvil
+	url = https://github.com/GrumbleFish/libanvil
