@@ -1,7 +1,7 @@
 PROJECT (dfconverter)
 
-FILE(GLOB MC_CPPS mc/*.c*)
-FILE(GLOB TAG_CPPS mc/tag/*.c*)
+FILE(GLOB MC_CPPS libanvil/*.c*)
+FILE(GLOB TAG_CPPS libanvil/tag/*.c*)
 
 SET(PROJECT_SRCS
 	dfconverter.cpp
@@ -9,8 +9,8 @@ SET(PROJECT_SRCS
 	${TAG_CPPS}
 )
 
-FILE(GLOB MC_HPPS mc/*.h*)
-FILE(GLOB TAG_HPPS mc/tag/*.h*)
+FILE(GLOB MC_HPPS libanvil/*.h*)
+FILE(GLOB TAG_HPPS libanvil/tag/*.h*)
 
 SET(PROJECT_HDRS
 	${MC_HPPS}

@@ -4,7 +4,7 @@
 #include "PluginManager.h"
 #include "DataDefs.h"
 
-#include "mc/region_file_reader.hpp"
+#include "libanvil/region_file_reader.hpp"
 
 using namespace DFHack;
 using namespace df::enums;
