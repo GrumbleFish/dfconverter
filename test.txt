@@ -1,0 +1,31 @@
+PROJECT (myplugin)
+
+FILE(GLOB MC_CPPS mc/*.c*)
+
+SET(PROJECT_SRCS
+	byte_stream.cpp
+	chunk_info.cpp
+	chunk_tag.cpp
+	compression.
+	myplugin.cpp
+	region.cpp
+	region_file.cpp
+	region_file_reader.cpp
+	region_file_writer.cpp
+	region_header.cpp
+	byte_array_tag.cpp
+	byte_tag.cpp
+	compound_tag.cpp
+	double_tag.cpp
+	end_tag.cpp
+	float_tag.cpp
+	generic_tag.cpp
+	int_array_tag.cpp
+	int_tag.cpp
+	list_tag.cpp
+	long_tag.cpp
+	short_tag.cpp
+	string_tag.cpp
+)
+
+DFHACK_PLUGIN(myplugin ${PROJECT_SRCS})

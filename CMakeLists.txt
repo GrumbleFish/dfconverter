@@ -1,0 +1,23 @@
+PROJECT (dfconverter)
+
+FILE(GLOB MC_CPPS mc/*.c*)
+FILE(GLOB TAG_CPPS mc/tag/*.c*)
+
+SET(PROJECT_SRCS
+	dfconverter.cpp
+	${MC_CPPS}
+	${TAG_CPPS}
+)
+
+FILE(GLOB MC_HPPS mc/*.h*)
+FILE(GLOB TAG_HPPS mc/tag/*.h*)
+
+SET(PROJECT_HDRS
+	${MC_HPPS}
+	${TAG_HPPS}
+)
+
+SET(PROJECT_LIBS
+	zlib.lib
+)
+DFHACK_PLUGIN(dfconverter ${PROJECT_SRCS} ${PROJECT_HDRS} LINK_LIBRARIES ${PROJECT_LIBS})
