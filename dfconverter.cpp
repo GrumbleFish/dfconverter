@@ -9,37 +9,19 @@
 using namespace DFHack;
 using namespace df::enums;
 
-DFHACK_PLUGIN("myplugin");
+DFHACK_PLUGIN("dfconverter");
 
 DFhackCExport command_result plugin_shutdown(color_ostream &out){
 	return CR_OK;
 }
 
-command_result myplugin(color_ostream &out, std::vector <std::string> & parameters){
-	try{
-
-		region_file_reader r = region_file_reader("r.-3.0.mca");
-		r.read();
-		std::vector<int> h = r.get_blocks_at(0,0);
-		for (int z=0;z<5;z++){
-			for (int i=0;i<16;i++){
-				for (int j=0;j<16;j++){
-					out.print("%d ",h[256*z+16*i+j]);
-				}
-				out.print("\n");
-			}
-		out.print("\n\n");
-		}
-	}catch(std::runtime_error e){
-		out.print("Ow, try again\n");
-		return CR_NOT_FOUND;
-	}
+command_result dfconverter(color_ostream &out, std::vector <std::string> & parameters){
 	return CR_OK;
 }
 
 DFhackCExport command_result plugin_init(color_ostream &out, std::vector <PluginCommand> &commands){
-	commands.push_back(PluginCommand("myplugin", "Fill in all the adamantine tubes again.", myplugin, false,
-		"Screams\n"
-		"A lot\n"));
+	commands.push_back(PluginCommand("dfconverter", "Converts the current fortress map to a Minecraft map.", dfconverter, false,
+		"Currently supports DF 40.24, and MC 1.8.3.\n"
+		"Usage/Info\n"));
 	return CR_OK;
 }
